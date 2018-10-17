@@ -22,10 +22,10 @@ sudo pip install opencv-python
 
 ### Usage
 
-python colorDemo.py -i <imagePath> 
+python Demo.py -i <imagePath> 
 
 or
 
 download test dataset and run
 
-python colorDemo.py
+python Demo.py

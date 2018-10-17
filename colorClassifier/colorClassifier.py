@@ -13,7 +13,7 @@ import glob
 os.environ["CUDA_VISIBLE_DEVICE"] = "0"
 opts=tf.GPUOptions(per_process_gpu_memory_fraction=0.15)
 conf=tf.ConfigProto(gpu_options=opts)
-conf.gpu_options.allow_growth = True
+conf.gpu_options.allow_growth = False
 
 
 
@@ -22,9 +22,9 @@ class colorClassifier():
 
 	def __init__(self,modelPath):
 		os.environ["CUDA_VISIBLE_DEVICE"] = "0"
-		opts=tf.GPUOptions(per_process_gpu_memory_fraction=0.15)
+		opts=tf.GPUOptions(per_process_gpu_memory_fraction=0.015)
 		conf=tf.ConfigProto(gpu_options=opts)
-		conf.gpu_options.allow_growth = True
+		conf.gpu_options.allow_growth = False
 		session = tf.Session(config=conf)
 		KTF.set_session(session)
 		self.model = load_model(modelPath)
